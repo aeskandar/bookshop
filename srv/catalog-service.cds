@@ -1,4 +1,4 @@
-using {sap.capire.bookshop as my} from '../db/schema';
+using {io.eskandar.bookshop as my} from '../db/schema';
 
 service CatalogService @(path: '/browse') {
 
@@ -18,8 +18,6 @@ action submitOrder (book: Books:ID, quantity: Integer);
 
 
 @requires: 'authenticated-user'
-action sendOrder (book: Books:ID, quantity: Integer)
-
-
+action sendOrder (book: Books:ID, quantity: Integer);
 
 }

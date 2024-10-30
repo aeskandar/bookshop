@@ -25,4 +25,10 @@ module.exports = async function() {
     this.after ('each','Books', book => {
         if (book.stock > 111) book.title += ` -- 11% discount!`
     })
+
+    this.after('each', 'Books', book => {
+        if (book.stock === 0) {
+            book.availability = 'no';
+        }
+    })
 }
